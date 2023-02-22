@@ -1,20 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-*{font-family: 'Raleway';font-style: normal;}
-
-body{
-    margin:0;
-    /*display: flex;
-    flex-direction: column;*/
-    display: flex; 
-    justify-content: center;     
+*{
+    font-family: 'Raleway';
+    font-style: normal;
+    box-sizing:border-box;    
 }
 
-.main-container{
-    max-width: 1440px;
+body{margin:0;}
+
+header, section, footer{
+    margin:auto;
+    max-width: 1440px;    
     width: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 /* HEADER */
@@ -22,36 +19,33 @@ body{
 header{
     align-items: center;
     width: 100%;
+    padding:0 55px;
 }
 
-ul{
-    list-style-type: none;
-    padding:0;
-    width: 324px;
-    margin:0 24px 0 0;  
+nav{         
+    margin-top:0;
+    margin-bottom:0;
+    padding-left:0;     
 }
 
-ul a{width: 50%;}
-
-li{
-    padding-top:46px;
+.menu{
+    padding-top: 46px;
+    padding-bottom: 48px;
     border-top: 2px solid transparent;    
     font-weight: 500;
     font-size: 16px;
-    line-height: 19px;    
+    line-height: 19px;
+    text-align: center;
+    width: 10em;
 }
 
-a li{text-align: center;}
-
-a li:hover {
+nav a:hover {
     border-top: 2px solid #0065FC;   
     color:#0065FC;   
 }
 
 .logo{
-    max-height:19px;    
-    margin-top:44px;
-    margin-left:55px;    
+    max-height:19px;                
 }
 
 a{
@@ -65,7 +59,15 @@ a{
     font-weight: 700;
     font-size: 18px;
     /*line-height: 21px;*/  
-    color: black;    
+    color: black;
+    background: #FFFFFF;
+    border-top: 1px solid #F2F2F2;
+    border-bottom: 1px solid #F2F2F2;
+    border-left: 0;
+    border-right: 0;
+    height:49px;
+    width:236px;
+    padding:0 1em;   
 }
 
 /*::placeholder{opacity:1;} Changer l'opacité du placeholder dans l'input*/
@@ -73,18 +75,67 @@ a{
 h2{
     font-weight: 700;
     font-size: 22px;
+    margin:0.3em 0;    
     /*line-height: 26px;*/
+}
+
+#sub-h2{
+    margin:0.5em 0 1.4em 0;
 }
 
 .sec1-p{
     font-weight: 400;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 19px;    
 }
 
-section{margin-left: 55px;}
+section{padding: 0 55px;}
 
 i{color:#0065FC;}
+
+.fa-location-dot{
+    color:black;
+    font-size: 1.3em;
+}
+
+button, input{
+    padding:0;
+}
+
+#loc-pin{
+    background: #F2F2F2;
+    border: 1px solid #F2F2F2;
+    border-radius: 15px 0px 0px 15px;
+    width: 50px;
+    height: 49px;
+    min-width:50px;
+    /* padding: 0; */
+}
+
+#loc-pin:active{
+    transform:scale(0.95)    
+}
+
+/* #loc-pin:hover{
+    background:#F9F9F9; 
+} */
+
+#search-btn{
+    background: #0065FC;
+    border: 1px solid #0065FC;
+    border-radius: 0px 15px 15px 0px;
+    width:132px;
+    height:49px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;    
+}
+
+#search-btn:active{
+    transform:scale(0.95);    
+}
 
 .sec1-span{    
     height: 24px;
@@ -96,6 +147,7 @@ i{color:#0065FC;}
 .fa-info{
     font-size: 0.8em ;
 }
+
 
 
 .flex{
@@ -132,4 +184,8 @@ i{color:#0065FC;}
 
 .jc-space-evenly{
     justify-content: space-evenly;
+}
+
+.jc-start{
+    justify-content: flex-start;
 }
