@@ -1,34 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
+/* ~~~~~~~~~~~~ Mes modifications sur toute la page ~~~~~~~~~~~~ */
+
 *{
+    /*Même font pour tous les textes de la page*/
     font-family: 'Raleway';
     font-style: normal;
+    /*Permet de faire en sorte que la taille des boites = contenu + padding*/
     box-sizing:border-box;    
 }
 
-body{margin:0;}
+body{
+    /*Retrait de toutes les marges du body*/
+    margin:0;
+}
 
 header, section, footer{
+    /*Centre (dans mon body) mon header, mes sections et mon footer avec une taille max de 1440px*/
     margin:auto;
     max-width: 1440px;    
     width: 100%;
+    padding: 0 55px;
 }
 
-/* HEADER */
+/* ~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~ */
 
 header{
     align-items: center;
-    width: 100%;
-    padding:0 55px;
+    /*width: 100%;*/
 }
 
-nav{         
+/* nav{         
     margin-top:0;
     margin-bottom:0;
     padding-left:0;     
-}
+} */
 
 .menu{
+    /*Gestion de l'espace en haut et en bas + anticipation bordure bleue en en créant une transparante afin d'éviter
+    que la boite grandisse avec l'ajout d'une border en :hover / :active / :focus etc...*/
     padding-top: 46px;
     padding-bottom: 48px;
     border-top: 2px solid transparent;    
@@ -49,11 +59,12 @@ nav a:hover {
 }
 
 a{
+    /* Retrait du soulignement de base des liens */
     text-decoration: none;
     color:black;
 }
 
-/* SECTION 1 */
+/* ~~~~~~~~~~~~ SECTION 1 ~~~~~~~~~~~~ */
 
 #res-loc{    
     font-weight: 700;
@@ -89,9 +100,10 @@ h2{
     line-height: 19px;    
 }
 
-section{padding: 0 55px;}
-
-i{color:#0065FC;}
+i{
+    /* Change la couleur de toutes les icônes */
+    color:#0065FC;
+}
 
 .fa-location-dot{
     color:black;
@@ -148,6 +160,8 @@ button, input{
     font-size: 0.8em ;
 }
 
+/*Gestion de ma ligne de filtres*/ 
+
 .filters{
     background: #FFFFFF;
     border: 2px solid #D9D9D9;
@@ -181,12 +195,17 @@ button.filters p{
     /* margin-right:0.5em; */
 }
 
+/* Petite ligne avec l'icône info à gauche */
 #info{
     margin:0 0.6em;
 }
 
+/* ~~~~~~~~~~~~  SECTION 2 ~~~~~~~~~~~~ */
 
 
+
+
+/* ~~~~~~~~~~~~ Toutes mes classes flexbox ~~~~~~~~~~~~ */
 
 .flex{
     display: flex;
