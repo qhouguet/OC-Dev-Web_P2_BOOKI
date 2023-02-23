@@ -148,6 +148,44 @@ button, input{
     font-size: 0.8em ;
 }
 
+.filters{
+    background: #FFFFFF;
+    border: 2px solid #D9D9D9;
+    border-radius: 25px;
+    height: 50px;
+    padding:1em;
+    margin: 0 1.5em;
+}
+
+.filters:focus{
+    background: #DEEBFF;
+}
+
+#filters{
+    margin-right:0.5em;
+}
+
+.div-filters{
+    margin:1.5em 0;
+}
+
+button.filters i{
+    font-size: 1.5em;
+    margin-right:0.5em;
+}
+
+button.filters p{
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    /* margin-right:0.5em; */
+}
+
+#info{
+    margin:0 0.6em;
+}
+
+
 
 
 .flex{
@@ -184,6 +222,10 @@ button, input{
 
 .jc-space-evenly{
     justify-content: space-evenly;
+}
+
+.jc-space-around{
+    justify-content: space-around;
 }
 
 .jc-start{
