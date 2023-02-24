@@ -12,29 +12,30 @@
 
 body{
     /*Retrait de toutes les marges du body*/
-    margin:0;
+    margin:auto;
+    max-width: 1400px;
 }
 
-header, section, footer{
+header, main, footer{
     /*Centre (dans mon body) mon header, mes sections et mon footer avec une taille max de 1440px*/
-    margin:auto;
-    max-width: 1440px;    
+    margin:auto;        
     width: 100%;
     padding: 0 55px;
 }
 
 /* ~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~ */
 
-header{
+#header{
     align-items: center;
     /*width: 100%;*/
 }
 
-/* nav{         
-    margin-top:0;
+nav{         
+    /* margin-top:0;
     margin-bottom:0;
-    padding-left:0;     
-} */
+    padding-left:0;      */
+    width: 25%;    
+} 
 
 .menu{
     /*Gestion de l'espace en haut et en bas + anticipation bordure bleue en en créant une transparante afin d'éviter
@@ -46,7 +47,7 @@ header{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    width: 10em;
+    width: 50%;
 }
 
 nav a:hover {
@@ -55,8 +56,13 @@ nav a:hover {
 }
 
 .logo{
-    max-height:19px;                
+    /* width: 30%; */
+    max-height: 19px;
 }
+
+/* #logo{
+    width: 25%;
+} */
 
 a{
     /* Retrait du soulignement de base des liens */
@@ -78,20 +84,20 @@ a{
     border-right: 0;
     height:49px;
     width:236px;
-    padding:0 1em;   
+    padding:0 10px;   
 }
 
 /*::placeholder{opacity:1;} Changer l'opacité du placeholder dans l'input*/
 
-h2{
+h1{
     font-weight: 700;
     font-size: 22px;
-    margin:0.3em 0;    
+    margin:5px 0;    
     /*line-height: 26px;*/
 }
 
-#sub-h2{
-    margin:0.5em 0 1.4em 0;
+#sub-h1{
+    margin:8px 0 22px 0;
 }
 
 .sec1-p{
@@ -145,6 +151,15 @@ button, input{
     color: #FFFFFF;    
 }
 
+.fa-magnifying-glass{
+    font-size: 1em;
+    color: white;
+}
+
+.dsktp-search-glass{
+    display: none !important;
+}
+
 #search-btn:active{
     transform:scale(0.95);    
 }
@@ -166,44 +181,78 @@ button, input{
     background: #FFFFFF;
     border: 2px solid #D9D9D9;
     border-radius: 25px;
-    height: 50px;
-    padding:1em;
-    margin: 0 1.5em;
+    height: 50px;    
+    padding:16px;
+    margin: 0 24px;
 }
 
-.filters:focus{
+.filters:hover{
     background: #DEEBFF;
 }
 
 #filters{
-    margin-right:0.5em;
-}
+    margin-right:8px;
+} 
 
 .div-filters{
-    margin:1.5em 0;
+    margin:24px 0;
+    width: 100%;    
 }
 
 button.filters i{
     font-size: 1.5em;
-    margin-right:0.5em;
+    margin-right:8px;
 }
 
-button.filters p{
+button.filters span{
     font-weight: 700;
     font-size: 17px;
     line-height: 20px;
     /* margin-right:0.5em; */
 }
 
-/* Petite ligne avec l'icône info à gauche */
-#info{
-    margin:0 0.6em;
+#wrap-filters{
+    width: 100%;
 }
 
-/* ~~~~~~~~~~~~  SECTION 2 ~~~~~~~~~~~~ */
+/* Petite ligne avec l'icône info à gauche */
+#info{
+    margin:0 9px;
+}
+
+/* ~~~~~~~~~~~~  MAIN ~~~~~~~~~~~~ */
 
 
 
+
+
+
+/* ~~~~~~~~~~~~  FOOTER ~~~~~~~~~~~~ */
+
+footer{
+    background: #F2F2F2;
+    background-clip: content-box;    
+}
+
+.footer-menu{
+    width:25%;    
+    margin:70px 75px;   
+}
+
+footer h2{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    margin:0;
+    padding-bottom:20px;
+}
+
+footer a{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    padding:5px 0;
+}
 
 /* ~~~~~~~~~~~~ Toutes mes classes flexbox ~~~~~~~~~~~~ */
 
@@ -225,6 +274,10 @@ button.filters p{
 
 .r-column{
     flex-direction: column;
+}
+
+.wrap{
+    flex-wrap: wrap;
 }
 
 .items-center{
