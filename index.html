@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!--<link rel="stylesheet" href="https://kit.fontawesome.com/dc167a13df.css" crossorigin="anonymous">-->
     <script src="https://kit.fontawesome.com/dc167a13df.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
 
     <header>
         <div class="header flex row justify-between items-center">
-            <a href="#"><img class="logo" src="images/logo/Booki.png" alt="logo"></a>
+            <a class="logo-box" href="#"><img class="logo" src="images/logo/Booki.png" alt="logo"></a>
             <nav class="flex row">
                 <a href="#hebergement" class="menu">
                     Hébergements
@@ -28,7 +29,7 @@
     
         <!-- SECTION BARRE DE NAVIGATION + FILTRES-->
     
-        <div>
+        <div class="mobile-padding">
             <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
             <p class="subtitle header-paragraph">En plein centre-ville ou en pleine nature</p>
             <form action="#" method="get" class="flex row justify-start search-bar">
@@ -39,7 +40,7 @@
                         class="mobile-search fa-solid fa-magnifying-glass"></i><span
                         class="desktop-search">Rechercher</span></button>
             </form>
-            <div class="flex row items-center wrap filters-box">
+            <div class="flex row items-center filters-box">
                 <h2 class="filters-title">Filtres</h2>
                 <div class="flex row items-center all-filters">
                     <button class="flex row items-center justify-start filter-button"><i
