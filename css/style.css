@@ -19,11 +19,32 @@ body{
 header, main, footer{
     /*Centre (dans mon body) mon header, mes sections et mon footer avec une taille max de 1440px*/
     width: 100%;
-    padding: 0 45px;
+    padding: 0 50px;
 }
 
 html{
     font-size:62.5%;    
+}
+
+h1{
+    font-weight: 700;
+    font-size: 22px;
+    margin:5px 0;    
+    line-height: 26px;
+}
+
+h2{
+    margin:0;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+h3{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    margin:0;
 }
 
 /* ~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~ */
@@ -65,14 +86,7 @@ a{
     color:black;
 }
 
-/* ~~~~~~~~~~~~ SECTION 1 ~~~~~~~~~~~~ */
-
-h1{
-    font-weight: 700;
-    font-size: 22px;
-    margin:5px 0;    
-    line-height: 26px;
-}
+/* ~~~~~~~~~~~~ Filtres ~~~~~~~~~~~~ */
 
 .subtitle{
     margin:8px 0 22px 0;
@@ -216,17 +230,15 @@ button, input{
 
 /* ~~~~~~~~~~~~  MAIN ~~~~~~~~~~~~ */
 
-article{
-    height: 100%;
-    box-shadow: 0 3px 15px 0 rgba(0,0,0,0.1);
-    border-radius: 20px;
+main{
+    margin:30px 0;
 }
 
-.hebergement-box, .activite-box
+.hebergement-box, .populaire-box
 {        
     background: #F2F2F2;
     border-radius: 20px;
-    padding:30px;
+    padding:40px;
 }
 
 .hebergement-box
@@ -234,15 +246,63 @@ article{
     width: 65%;        
 }
 
-.activite-box{
+.populaire-box{
     width:32%;          
 }
 
 .medium-card{
-    width:30%;    
+    width: 31%;    
     background: #FFFFFF;
     border-radius: 20px;
     margin:15px 0;    
+}
+
+article{    
+    box-shadow: 0 3px 15px 0 rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+
+.hebergement-medium-card, .populaire-small-card{
+    height: 100%;
+    width: 100%;
+}
+
+.medium-img{
+    width: 100%;    
+    height:125px;
+    object-fit: cover;
+    border: 5px solid #FFFFFF;
+    border-radius: 20px 20px 0px 0px;
+    flex-shrink: 0;
+}
+
+.padding-medium-card{      
+    padding :4px 12px 12px 12px;    
+    height: 100%;    
+}
+
+.card-price{
+    padding:5px 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    margin:0;
+}
+
+.fa-star{
+    font-size: 1.2rem;    
+}
+
+.grey{
+    color: #F2F2F2;
+}
+
+.unwrap-link{  
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    width: fit-content; 
+    margin-top:30px;   
 }
 
 .small-card{
@@ -253,101 +313,51 @@ article{
 }
 
 .small-card-info{    
+    width: 66%;
     height: 145px;
-    padding:12px 0;
-}
-
-.padding-card{      
-    padding :12px;    
-    height: 100%;    
-}
-
-.gray{
-    color: #F2F2F2;
-}
-
-.large-img{
-    width: 100%;  
-    height:390px;
-    object-fit: cover;
-    border-radius: 20px 20px 0px 0px;
-}
-
-.medium-img{    
-    height:125px;
-    object-fit: cover;
-    border: 5px solid #FFFFFF;
-    border-radius: 20px 20px 0px 0px;
+    padding:12px 12px 12px 4px;
 }
 
 .small-img{
     max-width: 140px;
-    width: 60%;
+    width: 34%;
     height:145px;
     object-fit: cover;
     border: 5px solid #FFFFFF;
     border-radius: 20px 0px 0px 20px;
-}
-
-
-.medium-card-price{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    margin:3px 0;
-}
-
-.fa-star{
-    font-size: 1.2rem;    
-}
-
-h3{
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
-    margin:0;
-}
-
-.h3-activites{
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;    
-}
-
-.sec-h2{
-    margin:0;
+    flex-shrink: 0;
 }
 
 .fa-chart-line{
-    font-size: 1.5em;
-}
-
-.hebergement-section{
-    margin:30px 0;
+    font-size: 1.8rem;
 }
 
 .activites-section{
     margin:30px 0;
 }
 
-.activites-card{
+.activites-wrap-mobile{
+    width: 100%;
+}
+
+.activites-card{       
     width: 23%;
     margin:20px 0;
 }
-
-.unwrap-link{  
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
-    width: fit-content;    
+.large-card{
+    height: 100%;
 }
-
-.unwrap-button:active{
-    transform:scale(0.95);    
-}
-
-.titre-activite{        
+.titre-activite{         
     padding:20px;
+}
+.large-img{
+    width: 100%;  
+    height:390px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+.unwrap-link:active{
+    transform:scale(0.95);    
 }
 
 /* ~~~~~~~~~~~~  FOOTER ~~~~~~~~~~~~ */
@@ -429,21 +439,47 @@ footer a{
 
 @media screen and (max-width: 992px) {
     header, main, footer{
-        padding:0 30px;
+        padding:0 50px;
     }
     nav{
         width:40%;
     }    
     .filters-title{
-        margin:0;
+        margin:0 10px 0 0;
     }
-    .hebergement-section{
+    .filter-button{
+        margin:auto;
+    }
+    .populaire-wrap-mobile{
+        margin-top:10px;
+        flex-direction: row;
+    }
+    .small-card{
+        width:31%
+    }
+    .small-card-title{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .small-card-price{
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 15px;
+    }
+    .small-img{
+        width:42%;
+    }
+    .small-card-info{
+        width:58%;
+    }
+    #hebergement{
         flex-direction: column;
     }
-    .hebergement-box, .activite-box{
+    .hebergement-box, .populaire-box{
         width: 100%;
     }
-    .activite-box{
+    .populaire-box{
         margin-top:40px;
     }
     .footer-menu{
@@ -533,19 +569,51 @@ footer a{
     .filter-button i{
         font-size: 1.4rem;;
     }
-    .hebergement-section{
+    #hebergement{
         flex-direction: column-reverse;
     }
-    .hebergement-box, .activite-box{
+    .hebergement-box, .populaire-box{
+        width: 100%;
+        padding:20px;
+    }
+    .hebergement-wrap-mobile{
+        flex-direction: column;
+    }
+    .medium-card{
         width: 100%;
     }
-    .activite-box{
+    .populaire-box{
         margin:0;
         border-radius: 0;
     }
     .hebergement-box{
         border-radius: 0;
         background-color: #FFFFFF;
+    }
+    .populaire-wrap-mobile{
+        flex-direction:column;
+    }
+    .small-card{
+        width: 100%;
+    }
+    .small-card-title{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .small-card-price{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .activites-wrap-mobile{
+        flex-direction: column;
+    }
+    .activites-card{
+        width: 100%;
+    }
+    .large-img{
+        height: 135px;
     }
     .unwrap-link{
         display: none;
