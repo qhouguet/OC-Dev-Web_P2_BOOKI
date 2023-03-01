@@ -165,8 +165,8 @@ button, input{
     color: white;
 }
 
-.mobile-search{
-    display: none !important;
+i.mobile-search{
+    display: none;
 }
 
 .desktop-search{
@@ -547,8 +547,8 @@ footer a{
     .desktop-search{
         display:none;
     }
-    .mobile-search{
-        display:block !important;
+    i.mobile-search{
+        display:block;
     }   
     .location-search{
         flex-grow: 0;
