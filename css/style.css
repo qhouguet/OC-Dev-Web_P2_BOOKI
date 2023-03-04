@@ -172,7 +172,7 @@ i.mobile-search{
 .desktop-search{
     display:block;    
 }
-/*::placeholder{opacity:1;} Changer l'opacité du placeholder dans l'input*/
+::placeholder{opacity:1;}
 
 .filters-box{
     margin:10px 0;
@@ -315,7 +315,7 @@ article{
 .small-card-info{    
     width: 66%;
     height: 145px;
-    padding:12px 12px 12px 4px;
+    padding:12px;
 }
 
 .small-img{
