@@ -9,6 +9,7 @@
     /*Permet de faire en sorte que la taille des boites = contenu + padding*/
     box-sizing:border-box; 
     /* border: 1px solid red; */
+    scroll-behavior: smooth;
 }
 
 body{
@@ -119,6 +120,11 @@ button, input{
     padding:0;
 }
 
+input[type="search"], input[type="password"], textarea {
+  border: none;
+  outline: none; /* You can adjust the color and thickness of the outline */
+}
+
 .mobile-padding{
     display:block;
 }
@@ -133,12 +139,21 @@ button, input{
     font-size: 18px;      
     color: black;
     background: #FFFFFF;
-    border-top: 1px solid #F2F2F2;
-    border-bottom: 1px solid #F2F2F2;
-    border-left: 0;
-    border-right: 0;    
+    /* border-top: 1px solid #F2F2F2; */
+    /* border-bottom: 1px solid #F2F2F2; */
+    /* border-left: 0;
+    border-right: 0;     */
+    border: 0px;
     padding:0 10px;
     flex-grow:1;   
+}
+
+.style-search{    
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #F2F2F2;
+    /* border-color:red; */
+    position: relative;
 }
 
 .search-button{
@@ -149,12 +164,17 @@ button, input{
     font-size: 18px;    
     text-align: center;
     color: #FFFFFF;
-    padding:0 16px;     
+    height: 50px;
+    width: 142px;       
+    position:absolute;
+    right:-75px;
+    top: 50%;
+    transform: translateY(-50%);   
 }
 
-.search-button:active{
+/* .search-button:active{
     transform:scale(0.95);    
-}
+} */
 
 .search-bar{
     height:50px;
@@ -206,7 +226,7 @@ i.mobile-search{
 
 .filter-button i{
     width: 25px;
-    font-size: 2.2rem;
+    font-size: 20px;
     margin-right:8px;
     text-align: center;
     padding:12px 0;
@@ -225,7 +245,7 @@ i.mobile-search{
 }
 
 .fa-info{
-    font-size: 1.2rem;
+    font-size: 11px;
 }
 
 /* Petite ligne avec l'icône info à gauche */
@@ -265,10 +285,10 @@ main{
 article{    
     box-shadow: 0 3px 15px 0 rgba(0,0,0,0.1);
     border-radius: 20px;
+    transition: all 0.2s ease-out;
 }
 
-a article:hover{    
-    transition: all 0.2s ease-out;
+a article:hover{        
     transform:scale(1.1);    
     box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
     top: -4px;    
@@ -419,7 +439,7 @@ footer a{
 
 /* ~~~~~~~~~~~~ MEDIA QUERY TABLETTE ~~~~~~~~~~~~ */
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1024px) {
     header, main, footer{
         padding:0 50px;
     }
@@ -483,11 +503,22 @@ footer a{
 /* ~~~~~~~~~~~~ MEDIA QUERY MOBILE ~~~~~~~~~~~~ */
 
 @media screen and (max-width: 768px) {
+    .style-search{
+        width:100%;
+    }
+    .search-button {        
+        border-radius: 15px;        
+        padding: 0;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+        right:-6px;
+        width: 50px;
+        height: 50px;             
+    }
     header, main, footer{
         padding:0;
     }
     .mobile-padding, .activities-section{
-        padding:0 22px;
+        padding:0 20px;
     }
     .header{
         flex-direction: column;
@@ -521,18 +552,14 @@ footer a{
     }
     .info-span{
         flex-shrink:0;
-    }
-    .info-mobile{
-        align-items:flex-start;
-    }
-    .info-paragraph{
-        padding-top:4px;
-    }
+    }    
     .subtitle{
         margin:15px 0;
     }
     .search-bar{
         width:100%;
+        max-width: 400px;
+        min-width:249px;
         margin-top:30px;
     }
     .desktop-search{
@@ -540,6 +567,7 @@ footer a{
     }
     i.mobile-search{
         display:block;
+        font-size: 17px;
     }   
     .location-search{
         flex-grow: 0;
@@ -560,6 +588,7 @@ footer a{
     .filter-button{
         margin:7px 0 7px 0;
         width:48%;
+        min-width: 140px;        
         padding:0 10px;        
     }
     .filter-button:focus{
@@ -567,14 +596,14 @@ footer a{
     }
     .filter-button span{
         font-weight: 700;
-        font-size: 11px;
+        font-size: 14px;
         line-height: 13px;
         margin-top: 1px;        
     }
     .filter-button i{
-        font-size: 1.8rem;        
+        font-size: 18px;        
         width:22.5px;
-        margin-right:5px;
+        margin-right:10px;
     }
     #lodging{
         flex-direction: column-reverse;
