@@ -11,58 +11,59 @@
 
 <body>
     <header>
-
-        <!-- LOGO + MENU -->
-
-        <div class="header flex row justify-between">
-            <a class="logo-box" href="#"><img class="logo" src="images/logo/Booki.png" alt="logo"></a>
-            <nav class="flex row">
-                <a href="#lodging" class="menu">
+        <div class="header">
+            <a class="header__logo" href="#">
+                <img class="header__logo__img" src="images/logo/Booki.png" alt="logo">
+            </a>
+            <nav class="header__menu">
+                <a href="#lodging" class="header__menu__item">
                     Hébergements
                 </a>
-                <a href="#activity" class="menu">
+                <a href="#activity" class="header__menu__item">
                     Activités
                 </a>
             </nav>
         </div>
 
-        <!-- SEARCHBAR AND FILTERS -->
-
-        <div class="mobile-padding">
+        <div class="container">
             <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
-            <p class="subtitle header-paragraph">En plein centre-ville ou en pleine nature</p>
-            <form action="#" method="get" class="flex row justify-start search-bar">
-                <button class="location-pin"><i class="fa-sharp fa-solid fa-location-dot"></i></button>
-                <input class="location-search" type="search" placeholder="Marseille, France" required
-                    title="Quelle est votre destination ?">
-                <button class="search-button" aria-label="Search"><i
-                        class="mobile-search fa-solid fa-magnifying-glass"></i><span
-                        class="desktop-search">Rechercher</span></button>
+            <p class="container__subtitle container__paragraph">En plein centre-ville ou en pleine nature</p>
+
+            <form action="#" method="get" class="container__searchbar">
+                <button class="location-pin">
+                    <i class="fa-sharp fa-solid fa-location-dot"></i>
+                </button>
+                <input class="container__searchbar__input" type="search" placeholder="Marseille, France" required
+                    title="Quelle est votre destination ?" />
+                <button class="container__searchbar__button" aria-label="Search">
+                    <i class="container__searchbar__button--magnifying-glass fa-solid fa-magnifying-glass"></i>
+                    <span class="container__searchbar__button--research">Rechercher</span>
+                </button>
             </form>
-            <div class="flex row items-center filters-box">
-                <h2 class="filters-title">Filtres</h2>
-                <div class="flex row items-center all-filters">
-                    <button class="flex row items-center justify-start filter-button"><i
-                            class="fa-solid fa-money-bill-wave"></i>
-                        <span>Économique</span>
-                    </button>
-                    <button class="flex row items-center justify-start filter-button"><i class="fa-solid fa-person"></i>
-                        <span>Familial</span>
-                    </button>
-                    <button class="flex row items-center justify-start filter-button"><i class="fa-solid fa-heart"></i>
-                        <span>Romantique</span>
-                    </button>
-                    <button class="flex row items-center justify-start filter-button"><i class="fa-solid fa-fire"></i>
-                        <span>Nos pépites</span>
-                    </button>
+
+            <div class="container__filters">
+                <h2 class="container__filters__title">Filtres</h2>
+                <div class="container__filters__container">
+                    <button class="container__filters__container__item"><i
+                            class="fa-solid fa-money-bill-wave"></i><span>Économique</span></button>
+                    <button class="container__filters__container__item"><i
+                            class="fa-solid fa-person"></i><span>Familial</span></button>
+                    <button class="container__filters__container__item"><i
+                            class="fa-solid fa-heart"></i><span>Romantique</span></button>
+                    <button class="container__filters__container__item"><i class="fa-solid fa-fire"></i><span>Nos
+                            pépites</span></button>
                 </div>
             </div>
-            <div class="flex row items-center info-mobile">
-                <span class="info-span flex row items-center justify-center"><i class="fa-solid fa-info"></i></span>
-                <p class="header-paragraph info-paragraph">Plus de 500 logements sont disponibles dans cette ville</p>
+
+            <div class="container__info">
+                <span class="container__info__icon"><i class="fa-solid fa-info"></i></span>
+                <p class="container__paragraph container__info__paragraph">Plus de 500 logements sont disponibles dans
+                    cette ville
+                </p>
             </div>
         </div>
     </header>
+
     <main>
 
         <!-- LODGING -->
