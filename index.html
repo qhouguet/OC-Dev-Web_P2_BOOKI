@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>Booki : Trouvez votre hébergement pour des vacances de rêve</title>
     <link rel="stylesheet" href="css/style.css">
-    <!--<link rel="stylesheet" href="https://kit.fontawesome.com/dc167a13df.css" crossorigin="anonymous"> Les CORS ne marchent pas en CSS only...-->
     <script src="https://kit.fontawesome.com/dc167a13df.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -15,7 +14,7 @@
 
         <!-- LOGO + MENU -->
 
-        <div class="header flex row justify-between items-center">
+        <div class="header flex row justify-between">
             <a class="logo-box" href="#"><img class="logo" src="images/logo/Booki.png" alt="logo"></a>
             <nav class="flex row">
                 <a href="#lodging" class="menu">
@@ -34,13 +33,11 @@
             <p class="subtitle header-paragraph">En plein centre-ville ou en pleine nature</p>
             <form action="#" method="get" class="flex row justify-start search-bar">
                 <button class="location-pin"><i class="fa-sharp fa-solid fa-location-dot"></i></button>
-                <div class="flex flex-row style-search">
-                    <input class="location-search" type="search" placeholder="Marseille, France" required
-                        title="Quelle est votre destination ?">
-                    <button class="search-button" aria-label="Search"><i
-                            class="mobile-search fa-solid fa-magnifying-glass"></i><span
-                            class="desktop-search">Rechercher</span></button>
-                </div>
+                <input class="location-search" type="search" placeholder="Marseille, France" required
+                    title="Quelle est votre destination ?">
+                <button class="search-button" aria-label="Search"><i
+                        class="mobile-search fa-solid fa-magnifying-glass"></i><span
+                        class="desktop-search">Rechercher</span></button>
             </form>
             <div class="flex row items-center filters-box">
                 <h2 class="filters-title">Filtres</h2>

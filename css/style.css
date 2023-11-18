@@ -2,25 +2,22 @@
 
 /* ~~~~~~~~~~~~ Mes modifications sur toute la page ~~~~~~~~~~~~ */
 
-*{
-    /*Même font pour tous les textes de la page*/
+*{    
     font-family: 'Raleway', sans-serif;
-    font-style: normal;
-    /*Permet de faire en sorte que la taille des boites = contenu + padding*/
-    box-sizing:border-box; 
-    /* border: 1px solid red; */
+    font-style: normal;    
+    box-sizing:border-box;
     scroll-behavior: smooth;
 }
 
-body{
-    /*Retrait de toutes les marges du body*/
-    margin:auto;
-    max-width: 1400px;
+:root {
+    --main-color: #0065FC;
+    --sub-color-1: #F2F2F2;
+    --sub-color-2: #DEEBFF;
 }
 
-header, main, footer{
-    /*Centre (dans mon body) mon header, mes sections et mon footer avec une taille max de 1440px*/
-    width: 100%;
+body{    
+    margin:auto;
+    max-width: 1440px;
     padding: 0 50px;
 }
 
@@ -31,7 +28,8 @@ html{
 h1{
     font-weight: 700;
     font-size: 22px;
-    margin:5px 0;    
+    margin:0;
+    /* margin:5px 0;     */
     line-height: 26px;
 }
 
@@ -54,24 +52,30 @@ h3{
 .header{align-items: center;}
 
 nav{
-    width: 28%;    
+    justify-content: space-between;     
+    align-self: flex-start;   
 } 
+
+nav > *:first-child{
+    margin-right:68px;
+}
 
 .menu{
     /*Gestion de l'espace en haut et en bas + anticipation bordure bleue en en créant une transparante afin d'éviter
     que la boite grandisse avec l'ajout d'une border en :hover / :active / :focus etc...*/
-    padding-top: 46px;
-    padding-bottom: 48px;
+    /* padding-top: 46px;
+    padding-bottom: 48px; */
+    padding-top: 15px;
     border-top: 2px solid transparent;    
     font-weight: 500;
     font-size: 16px;    
     text-align: center;
-    width: 50%;
+    /* width: 50%; */
 }
 
 nav a:hover {
-    border-top: 2px solid #0065FC;   
-    color:#0065FC;   
+    border-top: 2px solid var(--main-color);   
+    color:var(--main-color);   
 }
 
 .logo{    
@@ -80,6 +84,7 @@ nav a:hover {
 
 .logo-box{
     padding:0;
+    margin: 30px 0;
 }
 
 a{
@@ -91,7 +96,7 @@ a{
 /* ~~~~~~~~~~~~ Filtres ~~~~~~~~~~~~ */
 
 .subtitle{
-    margin:8px 0 22px 0;
+    margin:8px 0 0 0;
 }
 
 .header-paragraph{
@@ -101,8 +106,10 @@ a{
 }
 
 .location-pin{
-    background: #F2F2F2;
-    border: 1px solid #F2F2F2;
+    position:relative;
+    margin:-1px;
+    background: var(--sub-color-1);
+    border: 1px solid var(--sub-color-1);
     border-radius: 15px 0px 0px 15px;
     padding:0 16px;        
 }
@@ -113,20 +120,16 @@ a{
 
 i{
     /* Change la couleur de toutes les icônes */
-    color:#0065FC;
+    color:var(--main-color);
 }
 
 button, input{
     padding:0;
 }
 
-input[type="search"], input[type="password"], textarea {
-  border: none;
-  outline: none; /* You can adjust the color and thickness of the outline */
-}
-
 .mobile-padding{
     display:block;
+    margin-top:30px;
 }
 
 .fa-location-dot{
@@ -134,13 +137,14 @@ input[type="search"], input[type="password"], textarea {
     font-size: 1.8rem;
 }
 
-.location-search{    
+.location-search{
+    width: 100%;    
     font-weight: 700;
     font-size: 18px;      
     color: black;
     background: #FFFFFF;
-    /* border-top: 1px solid #F2F2F2; */
-    /* border-bottom: 1px solid #F2F2F2; */
+    /* border-top: 1px solid var(--sub-color-1); */
+    /* border-bottom: 1px solid var(--sub-color-1); */
     /* border-left: 0;
     border-right: 0;     */
     border: 0px;
@@ -151,34 +155,36 @@ input[type="search"], input[type="password"], textarea {
 .style-search{    
     border-width: 1px 0;
     border-style: solid;
-    border-color: #F2F2F2;
+    border-color: var(--sub-color-1);
     /* border-color:red; */
     position: relative;
 }
 
 .search-button{
-    background: #0065FC;
-    border: 1px solid #0065FC;
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
     border-radius: 0px 15px 15px 0px;    
     font-weight: 700;
     font-size: 18px;    
     text-align: center;
     color: #FFFFFF;
-    height: 50px;
-    width: 142px;       
-    position:absolute;
-    right:-75px;
-    top: 50%;
-    transform: translateY(-50%);   
+    padding: 0 16px;
 }
 
-/* .search-button:active{
+.search-button:active{
     transform:scale(0.95);    
-} */
+}
 
 .search-bar{
     height:50px;
-    width:36%;
+    /* width:36%; */
+    width: 400px;
+    position:relative;
+    border-width: 1px 0;
+    border-color: var(--sub-color-1);
+    border-style: solid;
+    border-radius: 15px;
+    margin: 35px 0;
 }
 
 .fa-magnifying-glass{
@@ -195,9 +201,9 @@ i.mobile-search{
 }
 ::placeholder{opacity:1;}
 
-.filters-box{
-    margin:20px 0;
-    width: 100%;    
+.filters-box{    
+    width: 100%;
+    margin-bottom: 35px;    
 }
 
 .filters-title{
@@ -261,7 +267,7 @@ main{
 
 .hebergement-box, .popular-box
 {        
-    background: #F2F2F2;
+    background: var(--sub-color-1);
     border-radius: 20px;
     padding:40px;
 }
@@ -327,7 +333,7 @@ a article:hover{
 }
 
 .grey{
-    color: #F2F2F2;
+    color: var(--sub-color-1);
 }
 
 .unwrap-link{  
@@ -396,7 +402,7 @@ a article:hover{
 /* ~~~~~~~~~~~~  FOOTER ~~~~~~~~~~~~ */
 
 footer{
-    background: #F2F2F2;
+    background: var(--sub-color-1);
     background-clip: content-box;    
 }
 
@@ -506,13 +512,12 @@ footer a{
     .style-search{
         width:100%;
     }
-    .search-button {        
+    .search-button {
+        position: relative;
+        margin:-1px;        
         border-radius: 15px;        
-        padding: 0;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
-        right:-6px;
-        width: 50px;
-        height: 50px;             
+        padding: 15px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);                     
     }
     header, main, footer{
         padding:0;
@@ -528,7 +533,7 @@ footer a{
         padding:20px 0;
     }
     nav{
-        width:100%;
+        width:100%;       
     }
     h3{
         font-weight: 700;
@@ -539,16 +544,16 @@ footer a{
         padding-top:18px;
         padding-bottom:16px;
         border-top:none;
-        border-bottom:2px solid #F2F2F2;
+        border-bottom:2px solid var(--sub-color-1);
     }
     nav a:focus {
-        border-bottom: 2px solid #0065FC;   
-        color:#0065FC;   
+        border-bottom: 2px solid var(--main-color);   
+        color:var(--main-color);   
     }
     nav a:hover {
         border-top: none;
-        border-bottom: 2px solid #0065FC;   
-        color:#0065FC;   
+        border-bottom: 2px solid var(--main-color);   
+        color:var(--main-color);   
     }
     .info-span{
         flex-shrink:0;
@@ -561,6 +566,7 @@ footer a{
         max-width: 400px;
         min-width:249px;
         margin-top:30px;
+
     }
     .desktop-search{
         display:none;
