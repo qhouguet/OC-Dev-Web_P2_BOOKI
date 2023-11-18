@@ -50,6 +50,16 @@ a {
     color: black;
 }
 
+i {
+    /* Change la couleur de toutes les icônes */
+    color: var(--main-color);
+}
+
+button,
+input {
+    padding: 0;
+}
+
 /* ~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~ */
 
 .header {
@@ -94,6 +104,11 @@ a {
 
 /* ~~~~~~~~~~~~ Filtres ~~~~~~~~~~~~ */
 
+.container {
+    display: block;
+    margin-top: 30px;
+}
+
 .container_subtitle {
     margin: 8px 0 0 0;
 }
@@ -104,10 +119,18 @@ a {
     line-height: 19px;
 }
 
-.container__info {
+.container__searchbar {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: start;
+    height: 50px;
+    width: 400px;
+    position: relative;
+    border-width: 1px 0;
+    border-color: var(--sub-color-1);
+    border-style: solid;
+    border-radius: 15px;
+    margin: 35px 0;
 }
 
 .location-pin {
@@ -121,21 +144,6 @@ a {
 
 .location-pin:active {
     transform: scale(0.95);
-}
-
-i {
-    /* Change la couleur de toutes les icônes */
-    color: var(--main-color);
-}
-
-button,
-input {
-    padding: 0;
-}
-
-.container {
-    display: block;
-    margin-top: 30px;
 }
 
 .fa-location-dot {
@@ -158,14 +166,6 @@ input {
     flex-grow: 1;
 }
 
-.style-search {
-    border-width: 1px 0;
-    border-style: solid;
-    border-color: var(--sub-color-1);
-    /* border-color:red; */
-    position: relative;
-}
-
 .container__searchbar__button {
     background: var(--main-color);
     border: 1px solid var(--main-color);
@@ -179,20 +179,6 @@ input {
 
 .container__searchbar__button:active {
     transform: scale(0.95);
-}
-
-.container__searchbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    height: 50px;
-    width: 400px;
-    position: relative;
-    border-width: 1px 0;
-    border-color: var(--sub-color-1);
-    border-style: solid;
-    border-radius: 15px;
-    margin: 35px 0;
 }
 
 .fa-magnifying-glass {
@@ -244,23 +230,29 @@ i.container__searchbar__button--magnifying-glass {
     padding: 0 19px;
     margin-right: 15px;
     text-align: left;
+
+    &:hover {
+        background: var(--sub-color-2);
+    }
+
+    & i {
+        width: 25px;
+        font-size: 20px;
+        margin-right: 8px;
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    & span {
+        font-weight: 700;
+        font-size: 17px;
+    }
 }
 
-.container__filters__container__item:hover {
-    background: var(--sub-color-2);
-}
-
-.container__filters__container__item i {
-    width: 25px;
-    font-size: 20px;
-    margin-right: 8px;
-    text-align: center;
-    padding: 12px 0;
-}
-
-.container__filters__container__item span {
-    font-weight: 700;
-    font-size: 17px;
+.container__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .container__info__icon {
@@ -289,22 +281,57 @@ main {
     margin: 35px 0;
 }
 
-.hebergement-box,
-.popular-box {
+.lodging {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.lodging__marseille,
+.lodging__popular {
     background: var(--sub-color-1);
     border-radius: 20px;
-    padding: 40px;
+    padding: 30px;
 }
 
-.hebergement-box {
+.lodging__marseille {
     width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.popular-box {
+.lodging__marseille__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.lodging__popular {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 32%;
+
+    .lodging__popular__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
-.medium-card {
+.lodging__popular__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.lodging__card {
     width: 31%;
     background: #ffffff;
     border-radius: 20px;
@@ -324,13 +351,24 @@ a article:hover {
     background-color: var(--sub-color-2);
 }
 
-.hebergement-medium-card,
-.popular-small-card {
+.lodging__card__article,
+.popular__card__article {
     height: 100%;
     width: 100%;
 }
 
-.medium-img {
+.popular__card__article {
+    display: flex;
+    flex-direction: row;
+}
+
+.lodging__card__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.image__medium {
     width: 100%;
     height: 125px;
     object-fit: cover;
@@ -339,49 +377,64 @@ a article:hover {
     flex-shrink: 0;
 }
 
-.padding-medium-card {
+.lodging__card__article__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 4px 12px 12px 12px;
     height: 100%;
 }
 
-.card-price {
-    padding: 5px 0;
+.card__price {
+    padding: 8px 0;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
     margin: 0;
 }
 
+.popular__card__rating .fa-star {
+    font-size: 1.07rem;
+}
+
 .fa-star {
-    font-size: 1.2rem;
+    font-size: 1.18rem;
+    margin-right: 2px;
 }
 
 .grey {
     color: var(--sub-color-1);
 }
 
-.unwrap-link {
+.lodging__marseille_link {
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;
     width: fit-content;
     margin-top: 30px;
+
+    &:active {
+        transform: scale(0.95);
+    }
 }
 
-.small-card {
+.popular__card {
     width: 100%;
     background: #ffffff;
     border-radius: 20px;
-    margin: 15px 0;
+    margin: 0;
 }
 
-.small-card-info {
+.popular__card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 66%;
     height: 145px;
-    padding: 12px;
+    padding: 10px 15px;
 }
 
-.small-img {
+.image__small {
     max-width: 140px;
     width: 34%;
     height: 145px;
@@ -418,9 +471,6 @@ a article:hover {
     height: 390px;
     object-fit: cover;
     border-radius: 20px 20px 0px 0px;
-}
-.unwrap-link:active {
-    transform: scale(0.95);
 }
 
 /* ~~~~~~~~~~~~  FOOTER ~~~~~~~~~~~~ */
@@ -515,37 +565,38 @@ footer a {
             font-size: 16px;
         }
     }
-    .popular-wrap-mobile {
-        margin-top: 10px;
+    .lodging__popular__wrapper {
+        margin-top: 20px;
         flex-direction: row;
     }
-    .small-card {
+    .popular__card {
         width: 31%;
     }
-    .small-card-title {
+    .popular__card__title {
         font-weight: 700;
         font-size: 14px;
         line-height: 16px;
     }
-    .small-card-price {
+    .popular__card__price {
         font-weight: 400;
         font-size: 13px;
         line-height: 15px;
     }
-    .small-img {
+    .image__small {
         width: 42%;
     }
-    .small-card-info {
+    .popular__card__info {
         width: 58%;
     }
+
     #lodging {
         flex-direction: column;
     }
-    .hebergement-box,
-    .popular-box {
+    .lodging__marseille,
+    .lodging__popular {
         width: 100%;
     }
-    .popular-box {
+    .lodging__popular {
         margin-top: 40px;
     }
     .footer-menu {
@@ -676,37 +727,42 @@ footer a {
     #lodging {
         flex-direction: column-reverse;
     }
-    .hebergement-box,
-    .popular-box {
+    .lodging__marseille,
+    .lodging__popular {
         width: 100%;
         padding: 20px;
     }
-    .lodging-wrap-mobile {
+    .lodging__marseille__wrapper {
         flex-direction: column;
     }
-    .medium-card {
+    .lodging__card {
         width: 100%;
     }
-    .popular-box {
+    .lodging__popular {
         margin: 0;
         border-radius: 0;
     }
-    .hebergement-box {
+    .lodging__marseille {
         border-radius: 0;
         background-color: #ffffff;
     }
-    .popular-wrap-mobile {
+    .lodging__popular__wrapper {
         flex-direction: column;
+
+        a:nth-child(2) {
+            margin: 15px 0;
+        }
     }
-    .small-card {
+    .popular__card {
         width: 100%;
     }
-    .small-card-title {
+    .popular__card__title {
         font-weight: 700;
         font-size: 16px;
         line-height: 19px;
     }
-    .small-card-price {
+
+    .popular__card__price {
         font-weight: 400;
         font-size: 14px;
         line-height: 16px;
@@ -720,7 +776,7 @@ footer a {
     .large-img {
         height: 135px;
     }
-    .unwrap-link {
+    .lodging__marseille_link {
         display: none;
     }
     .footer-menu {
