@@ -345,14 +345,6 @@ main {
 article {
     box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    transition: all 0.2s ease-out;
-}
-
-a article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-    top: -4px;
-    background-color: var(--sub-color-2);
 }
 
 .lodging__card__article,
@@ -415,7 +407,7 @@ a article:hover {
     font-size: 18px;
     line-height: 21px;
     width: fit-content;
-    margin-top: 30px;
+    margin-top: 15px;
 
     &:active {
         transform: scale(0.95);
@@ -452,8 +444,8 @@ a article:hover {
     font-size: 1.8rem;
 }
 
-.activities-section {
-    margin: 30px 0;
+.activities {
+    margin: 30px;
 }
 
 .activites-wrap-mobile {
@@ -463,16 +455,17 @@ a article:hover {
 .activities-card {
     width: 23%;
     margin: 20px 0;
+    border-radius: 20px;
 }
 .large-card {
     height: 100%;
 }
 .activity-title {
-    padding: 20px;
+    padding: 20px 19px;
 }
 .large-img {
     width: 100%;
-    height: 390px;
+    height: 380px;
     object-fit: cover;
     border-radius: 20px 20px 0px 0px;
 }
@@ -485,8 +478,8 @@ footer {
 }
 
 .footer-menu {
-    width: 30%;
-    padding: 70px 75px;
+    width: calc(100% / 3);
+    padding: 20px;
 }
 
 footer h3 {
@@ -494,14 +487,13 @@ footer h3 {
     font-size: 18px;
     line-height: 21px;
     margin: 0;
-    padding-bottom: 20px;
 }
 
 footer a {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    padding: 5px 0;
+    padding: 15px 0 0 0;
 }
 
 /* ~~~~~~~~~~~~ Toutes mes classes flexbox ~~~~~~~~~~~~ */
@@ -603,14 +595,8 @@ footer a {
     .lodging__popular {
         margin-top: 40px;
     }
-    .footer-menu {
-        padding: 45px;
-    }
     .large-img {
         height: 200px;
-    }
-    .activity-title {
-        padding: 10px 20px;
     }
 }
 
@@ -618,9 +604,16 @@ footer a {
 
 @media screen and (max-width: 768px) {
     header,
-    main,
-    footer {
+    main {
         padding: 0;
+    }
+    footer {
+        background-clip: border-box;
+        padding: 30px;
+
+        .footer-menu:nth-child(1) {
+            padding-top: 0;
+        }
     }
     .header {
         flex-direction: column;
@@ -648,7 +641,7 @@ footer a {
     }
 
     .container,
-    .activities-section {
+    .activities {
         padding: 0 20px;
     }
 
@@ -772,6 +765,13 @@ footer a {
         font-size: 14px;
         line-height: 16px;
     }
+    .activities {
+        padding: 0;
+
+        h2 {
+            margin: 30px 0 10px;
+        }
+    }
     .activites-wrap-mobile {
         flex-direction: column;
     }
@@ -782,13 +782,26 @@ footer a {
         height: 135px;
     }
     .lodging__marseille_link {
-        display: none;
+        margin-top: 0;
     }
     .footer-menu {
         width: 100%;
-        padding: 40px;
+        padding: 50px 0 0 0;
     }
     #footer {
         flex-direction: column;
+    }
+}
+
+@media (hover: hover) {
+    .animation--card {
+        transition: all 0.1s ease-out;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+            top: -4px;
+            background-color: var(--sub-color-2);
+        }
     }
 }
